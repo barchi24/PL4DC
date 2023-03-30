@@ -1,13 +1,19 @@
 Package: PL4DC
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Parameterizable Library for Data Cleaning
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Gregorio Barchino Rodríguez-Caro
+Maintainer: Gregorio Barchino <gregorio.barchino@alu.uclm.es>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/barchi24/PL4DC
 BugReports: https://github.com/barchi24/PL4DC/issues
+RoxygenNote: 7.2.3
+Imports: 
+    lubridate
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
