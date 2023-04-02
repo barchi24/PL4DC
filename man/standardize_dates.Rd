@@ -2,27 +2,63 @@
 % Please edit documentation in R/fechas.R
 \name{standardize_dates}
 \alias{standardize_dates}
-\title{Standardize dates}
+\alias{standardize_dates_table}
+\title{Simplified date parsing function}
 \usage{
 standardize_dates(
   dates,
+  input_format = c("dmy", "mdy", "ymd"),
+  output_format = "\%Y-\%m-\%d"
+)
+
+standardize_dates_table(
+  dates,
+  columns,
   input_format = c("ymd", "mdy", "dmy"),
   output_format = "\%Y-\%m-\%d"
 )
 }
 \arguments{
-\item{dates}{A vector of dates to be standardized}
+\item{dates}{A vector of dates or a dataframe with multiple columns with
+dates to be standardized.}
 
-\item{input_format}{The input format of the dates. If not specified, the function will try to parse the dates in the following formats: ymd, mdy, dmy.}
+\item{input_format}{The input format of the dates. If not specified, the
+function will try to parse the dates in the following formats: dmy, mdy,
+ymd.}
 
-\item{output_format}{The output format of the dates. The default is "yyyy-mm-dd".}
+\item{output_format}{The output format of the dates. The default is
+"yyyy-mm-dd".}
+
+\item{columns}{The columns containing dates to standardize in the dataframe
+(must be greater than 1).}
 }
 \value{
-A vector of standardized dates.
+In the case of \code{standardize_dates()}, a vector of standardized
+  dates; and in the case of \code{standardize_dates_table()}, the same
+  dataframe with the specified columns standardized.
 }
 \description{
-Converts a vector of dates from one or more formats to another.
+Both of this functions convert dates from one or more formats to another.
+\code{standardize_dates()} takes a vector of dates, and
+\code{standardize_dates_table()} takes a dataframe and you specify the
+columns that contain dates.
 }
 \examples{
-standardize_dates(c("12/31/2019", "27-03-20"))
+# Using a vector
+# Example of different dates with different formats
+dates <- c("27/03/2023", "15-07-2021", "16092012", "5/13/2017",
+           "18-03-23", "1998-03-18", "Jun 14, 1997", "22 Jan 2015")
+
+standardize_dates(dates, output_format = "\%d/\%m/\%Y")
+
+# Using a dataframe
+# Create dataframe with dates
+dates <- data.frame(id = 1:2,
+                    date1 = c("Feb 2, 2021", "02032021"),
+                    date2 = c("12/31/2019", "27-03-20"))
+
+dates <- standardize_dates_table(dates, c(2, 3))
+}
+\seealso{
+\code{\link{find_na}, \link{replace_values}}
 }

@@ -2,23 +2,25 @@
 % Please edit documentation in R/auxiliares.R
 \name{replace_values}
 \alias{replace_values}
-\title{Replace values}
+\title{Replace values in a vector}
 \usage{
-replace_values(vector, positions, replacement)
+replace_values(x, positions, replacement)
 }
 \arguments{
-\item{vector}{A vector.}
+\item{x}{A vector.}
 
 \item{positions}{The positions to replace.}
 
 \item{replacement}{The values to replace with.}
 }
 \value{
-Returns a vector with the specified values replaced.
+Returns the introduced vector with the specified values replaced.
 }
 \description{
-Replace values in a vector.
+This function was made to replace the NA values returned by
+standardize_dates() with the manually fixed values.
 }
 \examples{
 replace_values(1:5, c(2,4), c(0, 7))
+
 }

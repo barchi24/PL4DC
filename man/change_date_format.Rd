@@ -7,9 +7,10 @@
 change_date_format(dates, new_format = "\%Y-\%m-\%d")
 }
 \arguments{
-\item{dates}{A vector of dates.}
+\item{dates}{A vector of dates (cannot be of characters).}
 
-\item{new_format}{The desired format of the dates. The default is "yyyy-mm-dd".}
+\item{new_format}{The desired format of the dates. The default is
+"yyyy-mm-dd".}
 }
 \value{
 A vector of dates in the desired format.
@@ -21,4 +22,5 @@ Changes the format of dates in a vector.
 # Change the format of the date vector
 today <- lubridate::today()
 new_dates <- change_date_format(today, "\%d/\%m/\%Y")
+
 }

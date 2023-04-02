@@ -2,16 +2,18 @@
 #'
 #' Changes the format of dates in a vector.
 #'
-#' @param dates A vector of dates.
-#' @param new_format The desired format of the dates. The default is "yyyy-mm-dd".
+#' @param dates A vector of dates (cannot be of characters).
+#' @param new_format The desired format of the dates. The default is
+#'   "yyyy-mm-dd".
 #'
 #' @return A vector of dates in the desired format.
-#' @export
 #'
 #' @examples
 #' # Change the format of the date vector
 #' today <- lubridate::today()
 #' new_dates <- change_date_format(today, "%d/%m/%Y")
+#'
+#' @export
 change_date_format <- function(dates, new_format = "%Y-%m-%d") {
   new_dates <- format(dates, new_format)
   return(new_dates)
@@ -19,15 +21,38 @@ change_date_format <- function(dates, new_format = "%Y-%m-%d") {
 
 #' Add delimiter to date
 #'
-#' Adds the '/' delimiter to a vector of dates with no delimiter. This will make it easier to standardize these types of dates using the standardize_dates function.
+#' Adds the '/' delimiter to a vector of dates with no delimiter. This function
+#' exists to facilitate the use of \code{\link{standardize_dates}()}, since, if in this
+#' type of dates the leading zero is missing in the day and/or in the month when
+#' they are values less than 10 (e.g. 1732023), it cannot perform the
+#' transformation. By adding any kind of delimiter it can be transformed without
+#' problems.
 #'
 #' @param dates A character vector of dates with no delimiter.
 #'
 #' @return A character vector with the dates having the '/' delimiter.
-#' @export
+#'
+#' @details When a date containing the year at the end is entered, it will be
+#'   limited from 1900 to 2099. Also, this function validates if the date format
+#'   is correct, but not if the date is valid (number of days for each month,
+#'   number of months in the year, etc.).
+#'
+#' @seealso \code{\link{replace_values}}
 #'
 #' @examples
+#' # Basic example
 #' add_delimiter(c("01012020", "22032023", "220323", "20200101"))
+#'
+#' # Common application
+#' # This vector cannot be standardized completely using standardize_dates()
+#' dates <- c("27/03/2023", "15-07-2021", "1692012", "5/13/2017", "5122010")
+#'
+#' # First we transform the problem dates
+#' dates[c(3,5)] <- add_delimiter(dates[c(3,5)])
+#'
+#' # Now we can use standardize_dates() without any problems
+#' standardize_dates(dates)
+#' @export
 add_delimiter <- function(dates) {
   # Format: ddmmyyyy, ddmmyy, mmddyyyy, mmddyy
   pattern1 <- "(^|\\D)(0?[1-9]|[12][0-9]|3[01])(0?[1-9]|[12][0-9]|3[01]])(\\d{2}|(19|20)\\d{2})(\\D|$)"
@@ -45,20 +70,47 @@ add_delimiter <- function(dates) {
   return(dates_with_delimiter)
 }
 
-#' Standardize dates
+#' Simplified date parsing function
 #'
-#' Converts a vector of dates from one or more formats to another.
+#' Both of this functions convert dates from one or more formats to another.
+#' \code{standardize_dates()} takes a vector of dates, and
+#' \code{standardize_dates_table()} takes a dataframe and you specify the
+#' columns that contain dates.
 #'
-#' @param dates A vector of dates to be standardized
-#' @param input_format The input format of the dates. If not specified, the function will try to parse the dates in the following formats: ymd, mdy, dmy.
-#' @param output_format The output format of the dates. The default is "yyyy-mm-dd".
+#' @param dates A vector of dates or a dataframe with multiple columns with
+#'   dates to be standardized.
+#' @param columns The columns containing dates to standardize in the dataframe
+#'   (must be greater than 1).
+#' @param input_format The input format of the dates. If not specified, the
+#'   function will try to parse the dates in the following formats: dmy, mdy,
+#'   ymd.
+#' @param output_format The output format of the dates. The default is
+#'   "yyyy-mm-dd".
 #'
-#' @return A vector of standardized dates.
-#' @export
+#' @return In the case of \code{standardize_dates()}, a vector of standardized
+#'   dates; and in the case of \code{standardize_dates_table()}, the same
+#'   dataframe with the specified columns standardized.
+#'
+#' @seealso \code{\link{find_na}, \link{replace_values}}
 #'
 #' @examples
-#' standardize_dates(c("12/31/2019", "27-03-20"))
-standardize_dates <-  function(dates, input_format = c("ymd", "mdy", "dmy"), output_format = "%Y-%m-%d") {
+#' # Using a vector
+#' # Example of different dates with different formats
+#' dates <- c("27/03/2023", "15-07-2021", "16092012", "5/13/2017",
+#'            "18-03-23", "1998-03-18", "Jun 14, 1997", "22 Jan 2015")
+#'
+#' standardize_dates(dates, output_format = "%d/%m/%Y")
+#'
+#' # Using a dataframe
+#' # Create dataframe with dates
+#' dates <- data.frame(id = 1:2,
+#'                     date1 = c("Feb 2, 2021", "02032021"),
+#'                     date2 = c("12/31/2019", "27-03-20"))
+#'
+#' dates <- standardize_dates_table(dates, c(2, 3))
+#' @export
+standardize_dates <-  function(dates, input_format = c("dmy", "mdy", "ymd"),
+                               output_format = "%Y-%m-%d") {
   # Parse the dates to the default format of the parse_data_time function
   new_dates <- lubridate::parse_date_time(dates, input_format)
   # Change the format to the one specified in the output_format parameter
@@ -67,30 +119,11 @@ standardize_dates <-  function(dates, input_format = c("ymd", "mdy", "dmy"), out
   return(new_dates)
 }
 
-#' Standardize Dates Table
-#'
-#' Takes a dataframe and converts the values in the specified columns from one format to another.
-#'
-#' @param dates A dataframe containing dates to be standardized.
-#' @param columns The columns to standardize in the dataframe.
-#' @param input_format The format of the dates in the dataframe. Defaults to: ymd, mdy, dmy.
-#' @param output_format The output format of the dates. Defaults to "yyyy-mm-dd".
-#'
-#' @return The same dataframe with the specified columns standardized.
+#' @rdname standardize_dates
 #' @export
-#'
-#' @examples
-#' # Create dataframe with dates
-#' dates <- data.frame(id = 1:2,
-#'                     date1 = c("Feb 2, 2021", "02032021"),
-#'                     date2 = c("12/31/2019", "27-03-20"))
-#'
-#' # Standardize dates
-#' dates <- standardize_dates_table(dates, c(2, 3))
-#'
-#' @export standardize_dates_table
-#'
-standardize_dates_table <-  function(dates, columns, input_format = c("ymd", "mdy", "dmy"), output_format = "%Y-%m-%d") {
+standardize_dates_table <-  function(dates, columns,
+                                     input_format = c("ymd", "mdy", "dmy"),
+                                     output_format = "%Y-%m-%d") {
   dates[, columns] <- apply(dates[, columns], 2, standardize_dates)
 
   return(dates)

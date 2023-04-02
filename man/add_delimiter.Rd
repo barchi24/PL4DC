@@ -13,8 +13,33 @@ add_delimiter(dates)
 A character vector with the dates having the '/' delimiter.
 }
 \description{
-Adds the '/' delimiter to a vector of dates with no delimiter. This will make it easier to standardize these types of dates using the standardize_dates function.
+Adds the '/' delimiter to a vector of dates with no delimiter. This function
+exists to facilitate the use of \code{\link{standardize_dates}()}, since, if in this
+type of dates the leading zero is missing in the day and/or in the month when
+they are values less than 10 (e.g. 1732023), it cannot perform the
+transformation. By adding any kind of delimiter it can be transformed without
+problems.
+}
+\details{
+When a date containing the year at the end is entered, it will be
+  limited from 1900 to 2099. Also, this function validates if the date format
+  is correct, but not if the date is valid (number of days for each month,
+  number of months in the year, etc.).
 }
 \examples{
+# Basic example
 add_delimiter(c("01012020", "22032023", "220323", "20200101"))
+
+# Common application
+# This vector cannot be standardized completely using standardize_dates()
+dates <- c("27/03/2023", "15-07-2021", "1692012", "5/13/2017", "5122010")
+
+# First we transform the problem dates
+dates[c(3,5)] <- add_delimiter(dates[c(3,5)])
+
+# Now we can use standardize_dates() without any problems
+standardize_dates(dates)
+}
+\seealso{
+\code{\link{replace_values}}
 }
