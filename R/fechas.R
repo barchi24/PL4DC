@@ -109,7 +109,7 @@ add_delimiter <- function(dates) {
 #'
 #' dates <- standardize_dates_table(dates, c(2, 3))
 #' @export
-standardize_dates <-  function(dates, input_format = c("dmy", "mdy", "ymd"),
+standardize_dates <- function(dates, input_format = c("dmy", "mdy", "ymd"),
                                output_format = "%Y-%m-%d") {
   # Parse the dates to the default format of the parse_data_time function
   new_dates <- lubridate::parse_date_time(dates, input_format)
@@ -121,7 +121,7 @@ standardize_dates <-  function(dates, input_format = c("dmy", "mdy", "ymd"),
 
 #' @rdname standardize_dates
 #' @export
-standardize_dates_table <-  function(dates, columns,
+standardize_dates_table <- function(dates, columns,
                                      input_format = c("ymd", "mdy", "dmy"),
                                      output_format = "%Y-%m-%d") {
   dates[, columns] <- apply(dates[, columns], 2, standardize_dates)

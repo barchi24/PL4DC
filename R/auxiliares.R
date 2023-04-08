@@ -33,6 +33,8 @@ find_na <- function(x) {
 #'
 #' @return Returns the introduced vector with the specified values replaced.
 #'
+#' @details The number of items to replace has to be a multiple of positions length.
+#'
 #' @examples
 #' replace_values(1:5, c(2,4), c(0, 7))
 #'
