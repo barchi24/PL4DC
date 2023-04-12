@@ -26,10 +26,48 @@
 #'   details of the pattern specification.
 #'
 #' @examples
-#' check_regex("[A-Za-z]+", c("Hello World", "123456", "foo", "bar 42"))
-#' check_regex("[0-9]+", c("Hello World", "123456", "foo", "bar 42"), value = TRUE)
+#' # Example data frame
+#' users <- data.frame(idUser = c(1, 2, 3, 4, 5),
+#'                     name = c("Mario", "Ismael", "Fernando", "Gregorio", "John"),
+#'                     dni = c("71684024L", "5684544A", "05331975M", "52498742", "603489758"))
+#' users
 #'
-#' check_regexl("[A-Za-z]+", c("Hello World", "123456", "foo", "bar 42"))
+#' # Regular expression of the DNI
+#' dni_pattern <- "^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$"
+#'
+#' ### Using check_regex (value = FALSE)
+#' # We obtain the indexes of the invalid dni from the dni column
+#' invalid_index <- check_regex(dni_pattern, users$dni)
+#'
+#' # We load the wrong values
+#' invalid_dnis <- users$dni[invalid_index]
+#' invalid_dnis
+#'
+#' ### Using check_regex (value = FALSE)
+#' # We obtain the invalid values of the dni's
+#' invalid_dnis <- check_regex(dni_pattern, users$dni, value = TRUE)
+#' invalid_dnis
+#'
+#' # We create a data frame with only the valid records
+#' valid_users <- users[!users$dni %in% invalid_dni,]
+#' valid_users
+#'
+#' # We create a data frame with only the invalid records
+#' invalid_users <- users[users$dni %in% invalid_dni,]
+#' invalid_users
+#'
+#' ### Using check_regexl
+#' # We obtain a logical vector of the matching
+#' validation <- check_regexl(dni_pattern, users$dni)
+#' validation
+#'
+#' # We create a data frame with only the valid records
+#' valid_users <- users[validation,]
+#' valid_users
+#'
+#' # We create a data frame with only the invalid records
+#' invalid_users <- users[!validation,]
+#' invalid_users
 #' @export
 check_regex <- function(pattern, vector, value = FALSE, ignore.case = FALSE) {
   matches <- grep(pattern, vector, ignore.case, value = value, invert = TRUE)
