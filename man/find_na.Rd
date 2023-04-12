@@ -22,7 +22,6 @@ resulting vector.
 }
 \examples{
 find_na(c(1, NA, 2, NA))
-
 }
 \seealso{
 \code{\link{standardize_dates}, \link{replace_values}}

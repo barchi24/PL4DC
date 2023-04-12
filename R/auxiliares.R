@@ -15,7 +15,6 @@
 #'
 #' @examples
 #' find_na(c(1, NA, 2, NA))
-#'
 #' @export
 find_na <- function(x) {
   na_positions <- which(is.na(x))
@@ -25,7 +24,7 @@ find_na <- function(x) {
 #' Replace values in a vector
 #'
 #' This function was made to replace the NA values returned by
-#' standardize_dates() with the manually fixed values.
+#' \code{\link{standardize_dates}()} with the manually fixed values.
 #'
 #' @param x A vector.
 #' @param positions The positions to replace.
@@ -37,7 +36,6 @@ find_na <- function(x) {
 #'
 #' @examples
 #' replace_values(1:5, c(2,4), c(0, 7))
-#'
 #' @export
 replace_values <- function(x, positions, replacement) {
   x[positions] <- replacement

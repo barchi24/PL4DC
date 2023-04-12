@@ -2,6 +2,8 @@
 
 export(add_delimiter)
 export(change_date_format)
+export(check_regex)
+export(check_regexl)
 export(find_na)
 export(replace_values)
 export(standardize_dates)

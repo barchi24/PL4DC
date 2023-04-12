@@ -8,8 +8,7 @@
 
 The goal of PL4DC is to to assist in data cleansing tasks. The functions
 contained are focused on improving one or more of the quality properties
-defined in ISO/IEC 25024. The main utility provided by the functions is
-the standardization of data (dates, strings, etc).
+defined in ISO/IEC 25024.
 
 ## Installation
 

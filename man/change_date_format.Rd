@@ -22,5 +22,4 @@ Changes the format of dates in a vector.
 # Change the format of the date vector
 today <- lubridate::today()
 new_dates <- change_date_format(today, "\%d/\%m/\%Y")
-
 }

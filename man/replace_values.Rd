@@ -18,12 +18,11 @@ Returns the introduced vector with the specified values replaced.
 }
 \description{
 This function was made to replace the NA values returned by
-standardize_dates() with the manually fixed values.
+\code{\link{standardize_dates}()} with the manually fixed values.
 }
 \details{
 The number of items to replace has to be a multiple of positions length.
 }
 \examples{
 replace_values(1:5, c(2,4), c(0, 7))
-
 }

@@ -12,7 +12,6 @@
 #' # Change the format of the date vector
 #' today <- lubridate::today()
 #' new_dates <- change_date_format(today, "%d/%m/%Y")
-#'
 #' @export
 change_date_format <- function(dates, new_format = "%Y-%m-%d") {
   new_dates <- format(dates, new_format)
