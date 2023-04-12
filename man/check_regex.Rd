@@ -81,6 +81,9 @@ invalid_users <- users[!validation,]
 invalid_users
 }
 \seealso{
-\code{\link{regular expression}} (aka \code{\link{regexp}}) for
-  details of the pattern specification.
+\code{\link{regular expression}} (aka \code{\link{regexp}}) for details of
+the pattern specification.
+
+Examples of patterns for common elements in the data frame
+\code{\link{patterns}}.
 }

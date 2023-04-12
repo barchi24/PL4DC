@@ -22,8 +22,12 @@
 #' \code{check_regexl} returns a logical vector (match or not for each element
 #' of \code{vector}).
 #'
-#' @seealso \code{\link{regular expression}} (aka \code{\link{regexp}}) for
-#'   details of the pattern specification.
+#' @seealso
+#' \code{\link{regular expression}} (aka \code{\link{regexp}}) for details of
+#' the pattern specification.
+#'
+#' Examples of patterns for common elements in the data frame
+#' \code{\link{patterns}}.
 #'
 #' @examples
 #' # Example data frame
