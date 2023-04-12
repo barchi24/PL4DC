@@ -54,17 +54,17 @@ invalid_index <- check_regex(dni_pattern, users$dni)
 invalid_dnis <- users$dni[invalid_index]
 invalid_dnis
 
-### Using check_regex (value = FALSE)
+### Using check_regex (value = TRUE)
 # We obtain the invalid values of the dni's
 invalid_dnis <- check_regex(dni_pattern, users$dni, value = TRUE)
 invalid_dnis
 
 # We create a data frame with only the valid records
-valid_users <- users[!users$dni \%in\% invalid_dni,]
+valid_users <- users[!users$dni \%in\% invalid_dnis,]
 valid_users
 
 # We create a data frame with only the invalid records
-invalid_users <- users[users$dni \%in\% invalid_dni,]
+invalid_users <- users[users$dni \%in\% invalid_dnis,]
 invalid_users
 
 ### Using check_regexl
