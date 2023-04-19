@@ -2,9 +2,11 @@
 
 export(add_delimiter)
 export(change_date_format)
+export(check_categories)
 export(check_regex)
 export(check_regexl)
 export(find_na)
+export(outside_range)
 export(replace_values)
 export(standardize_dates)
 export(standardize_dates_table)

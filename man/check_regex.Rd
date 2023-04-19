@@ -10,14 +10,14 @@ check_regex(pattern, vector, value = FALSE, ignore.case = FALSE)
 check_regexl(pattern, vector, ignore.case = FALSE)
 }
 \arguments{
-\item{pattern}{a character string containing a regular expression to search for.}
+\item{pattern}{A character string containing a regular expression to search for.}
 
-\item{vector}{a character vector to search in.}
+\item{vector}{A character vector to search in.}
 
-\item{value}{logical indicating whether to return the actual non-matching
+\item{value}{Logical indicating whether to return the actual non-matching
 elements instead of their indices (default: FALSE).}
 
-\item{ignore.case}{logical indicating whether to ignore case when matching
+\item{ignore.case}{Logical indicating whether to ignore case when matching
 the regular expression (default: FALSE).}
 }
 \value{

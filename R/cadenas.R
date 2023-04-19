@@ -5,11 +5,11 @@
 #' vector indicating whether there is a match between the pattern and each
 #' element of the vector.
 #'
-#' @param pattern a character string containing a regular expression to search for.
-#' @param vector a character vector to search in.
-#' @param value logical indicating whether to return the actual non-matching
+#' @param pattern A character string containing a regular expression to search for.
+#' @param vector A character vector to search in.
+#' @param value Logical indicating whether to return the actual non-matching
 #'   elements instead of their indices (default: FALSE).
-#' @param ignore.case logical indicating whether to ignore case when matching
+#' @param ignore.case Logical indicating whether to ignore case when matching
 #'   the regular expression (default: FALSE).
 #'
 #' @return
