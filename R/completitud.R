@@ -30,6 +30,11 @@
 #' @export
 na_detection <- function(data, columns) {
   na_values <- is.na(data[, columns])
+
+  if (is.vector(na_values)) {
+    na_values <- matrix(na_values, ncol = 1)
+  }
+
   na_rows <- apply(na_values, 1, any)
 
   return(which(na_rows))
