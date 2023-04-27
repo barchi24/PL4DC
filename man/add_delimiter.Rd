@@ -26,6 +26,10 @@ When a date containing the year at the end is entered, it will be
   is correct, but not if the date is valid (number of days for each month,
   number of months in the year, etc.).
 }
+\note{
+This function aims to help improve the property
+  \code{\link[=characteristics_properties]{Format Consistency}}.
+}
 \examples{
 # Basic example
 add_delimiter(c("01012020", "22032023", "220323", "20200101"))

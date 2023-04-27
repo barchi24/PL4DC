@@ -47,6 +47,10 @@ The \code{formula} parameter must be wrapped in the \code{quote()}
   function so that it is passed as an evaluable expression. For example:
   \code{isDerivedColumnValid(df, "col3", quote(col1 + col2))}
 }
+\note{
+These functions aim to help improve the property
+  \code{\link[=characteristics_properties]{Referential Integrity}}.
+}
 \examples{
 # Example data frame
 data <- data.frame(x = c(1, 2, 3, 4), y = c(4, 5, 6, 7), z = c(5, 7, 18, 11))

@@ -22,6 +22,10 @@ A vector with the indices or values that are not in the specified
 This function takes a character vector and a vector of categories and returns a
 vector with the indices or values that are not in the specified categories.
 }
+\note{
+This function aims to help improve the property
+  \code{\link[=characteristics_properties]{Accuracy Range}}.
+}
 \examples{
 # Example data frame
 papers <- data.frame(idPaper = c(1, 2, 3, 4, 5),
@@ -51,4 +55,7 @@ valid_papers
 # We create a data frame with only the invalid records
 invalid_papers <- papers[papers$state \%in\% invalid_states,]
 invalid_papers
+}
+\seealso{
+\code{\link{outside_range}}
 }

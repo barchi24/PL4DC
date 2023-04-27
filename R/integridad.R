@@ -14,6 +14,9 @@
 #' @return A vector with the values that violate referential integrity. If no
 #'   violated values are found, an empty vector is returned.
 #'
+#' @note This function aims to help improve the property
+#'   \code{\link[=characteristics_properties]{Referential Integrity}}.
+#'
 #' @examples
 #' employees <- data.frame(id = 1:5, name = c("Mario", "Ismael", "Fernando", "Gregorio", "John"))
 #' sales <- data.frame(id = 1:5, price = c(500, 1000, 250, 300, 500),
@@ -45,6 +48,9 @@ verify_integrity <- function(df1, df2, col1, col2) {
 #'   frame (df) or another data frame using their names or indices.
 #'
 #' @return The same data frame with the new column added.
+#'
+#' @note This function aims to help improve the property
+#'   \code{\link[=characteristics_properties]{Referential Integrity}}.
 #'
 #' @examples
 #' data <- data.frame(x = 1:5, y = 6:10)
@@ -89,6 +95,9 @@ derived_column <- function(df, new_col, formula) {
 #' @details The \code{formula} parameter must be wrapped in the \code{quote()}
 #'   function so that it is passed as an evaluable expression. For example:
 #'   \code{isDerivedColumnValid(df, "col3", quote(col1 + col2))}
+#'
+#' @note These functions aim to help improve the property
+#'   \code{\link[=characteristics_properties]{Referential Integrity}}.
 #'
 #' @seealso Use \code{\link{derived_column}} to create columns derived from the
 #'   data in other columns.

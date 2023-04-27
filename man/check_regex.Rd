@@ -36,6 +36,10 @@ element(s) of a given character vector. \code{check_regexl} returns a logical
 vector indicating whether there is a match between the pattern and each
 element of the vector.
 }
+\note{
+These functions aim to help improve the property
+  \code{\link[=characteristics_properties]{Syntactic Accuracy}}.
+}
 \examples{
 # Example data frame
 users <- data.frame(idUser = c(1, 2, 3, 4, 5),

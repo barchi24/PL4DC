@@ -25,6 +25,10 @@ This function creates a new column in a data frame by evaluating a formula
 that references other columns in this (df) or other data frame. The new
 column is added to the data frame in-place.
 }
+\note{
+This function aims to help improve the property
+  \code{\link[=characteristics_properties]{Referential Integrity}}.
+}
 \examples{
 data <- data.frame(x = 1:5, y = 6:10)
 derived_column(data, "z", quote(x + y))

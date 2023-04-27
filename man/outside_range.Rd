@@ -24,6 +24,10 @@ A numeric vector of either the values or indices that are outside of
 Given a vector of numeric values, returns the indices or values that are
 outside of the specified range.
 }
+\note{
+This function aims to help improve the property
+  \code{\link[=characteristics_properties]{Accuracy Range}}.
+}
 \examples{
 # Example data frame
 employees <- data.frame(idUser = c(1, 2, 3, 4, 5),
@@ -57,4 +61,7 @@ valid_employees # or employees[employees$salaries >= min & employees$salaries <=
 # We create a data frame with only the invalid records
 invalid_employees <- employees[employees$salaries \%in\% invalid_salaries,]
 invalid_employees # or employees[employees$salaries < min | employees$salaries > max,]
+}
+\seealso{
+\code{\link{check_categories}}
 }

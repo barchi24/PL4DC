@@ -8,6 +8,9 @@
 #'
 #' @return A vector of dates in the desired format.
 #'
+#' @note This function aims to help improve the property
+#'   \code{\link[=characteristics_properties]{Format Consistency}}.
+#'
 #' @examples
 #' # Change the format of the date vector
 #' today <- lubridate::today()
@@ -35,6 +38,9 @@ change_date_format <- function(dates, new_format = "%Y-%m-%d") {
 #'   limited from 1900 to 2099. Also, this function validates if the date format
 #'   is correct, but not if the date is valid (number of days for each month,
 #'   number of months in the year, etc.).
+#'
+#' @note This function aims to help improve the property
+#'   \code{\link[=characteristics_properties]{Format Consistency}}.
 #'
 #' @seealso \code{\link{replace_values}}
 #'
@@ -89,6 +95,9 @@ add_delimiter <- function(dates) {
 #' @return In the case of \code{standardize_dates()}, a vector of standardized
 #'   dates; and in the case of \code{standardize_dates_table()}, the same
 #'   dataframe with the specified columns standardized.
+#'
+#' @note These functions aim to help improve the property
+#'   \code{\link[=characteristics_properties]{Format Consistency}}.
 #'
 #' @seealso \code{\link{find_na}, \link{replace_values}}
 #'

@@ -12,6 +12,11 @@
 #' @return A numeric vector of either the values or indices that are outside of
 #'   the specified range.
 #'
+#' @note This function aims to help improve the property
+#'   \code{\link[=characteristics_properties]{Accuracy Range}}.
+#'
+#' @seealso \code{\link{check_categories}}
+#'
 #' @examples
 #' # Example data frame
 #' employees <- data.frame(idUser = c(1, 2, 3, 4, 5),
@@ -70,6 +75,11 @@ outside_range <- function(vector, min, max, value = FALSE) {
 #'
 #' @return A vector with the indices or values that are not in the specified
 #'   categories
+#'
+#' @note This function aims to help improve the property
+#'   \code{\link[=characteristics_properties]{Accuracy Range}}.
+#'
+#' @seealso \code{\link{outside_range}}
 #'
 #' @examples
 #' # Example data frame

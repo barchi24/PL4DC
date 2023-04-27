@@ -43,6 +43,10 @@ Both of this functions convert dates from one or more formats to another.
 \code{standardize_dates_table()} takes a dataframe and you specify the
 columns that contain dates.
 }
+\note{
+These functions aim to help improve the property
+  \code{\link[=characteristics_properties]{Format Consistency}}.
+}
 \examples{
 # Using a vector
 # Example of different dates with different formats

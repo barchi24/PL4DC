@@ -26,6 +26,10 @@ This function verifies whether the values in one column of a data frame (df2)
 are present in another column of a different data frame (df1), to ensure
 referential integrity between both data frames.
 }
+\note{
+This function aims to help improve the property
+  \code{\link[=characteristics_properties]{Referential Integrity}}.
+}
 \examples{
 employees <- data.frame(id = 1:5, name = c("Mario", "Ismael", "Fernando", "Gregorio", "John"))
 sales <- data.frame(id = 1:5, price = c(500, 1000, 250, 300, 500),

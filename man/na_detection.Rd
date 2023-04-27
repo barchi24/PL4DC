@@ -20,6 +20,10 @@ This function takes a data set and a vector with the indices of the columns
 to be checked for missing values. It returns a vector with the indices of the
 rows that have at least one missing value in any of the specified columns.
 }
+\note{
+This function aims to help improve the property
+  \code{\link[=characteristics_properties]{Record Completeness}}.
+}
 \examples{
 # Example data frame
 users <- data.frame(idUser = c(1, 2, NA, 4, 5),

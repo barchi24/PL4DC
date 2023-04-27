@@ -10,6 +10,9 @@
 #' @return A vector with the indices of the rows that have missing values in the
 #'   specified columns.
 #'
+#' @note This function aims to help improve the property
+#'   \code{\link[=characteristics_properties]{Record Completeness}}.
+#'
 #' @examples
 #' # Example data frame
 #' users <- data.frame(idUser = c(1, 2, NA, 4, 5),
