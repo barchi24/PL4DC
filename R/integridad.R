@@ -1,36 +1,67 @@
 #' Verifies referential integrity between two data frames
 #'
-#' This function verifies whether the values in one column of a data frame (df2)
-#' are present in another column of a different data frame (df1), to ensure
-#' referential integrity between both data frames.
+#' This function verifies whether the values in one column of a data frame
+#' (primary_df) are present in another column of a different data frame
+#' (foreign_df), to ensure referential integrity between both data frames.
 #'
-#' @param df1 The first data frame to compare.
-#' @param df2 The second data frame to compare.
-#' @param col1 The name of the column in the first data frame (df1) that
-#'   contains the primary values.
-#' @param col2 The name of the column in the second data frame (df2) that
+#' @param foreign_df The data frame containing the foreign key.
+#' @param foreign_col The name of the column in the data frame (foreign_df) that
 #'   contains the foreign values.
+#' @param primary_df The data frame containing the primary key.
+#' @param primary_col The name of the column in the  data frame (primary_df)
+#'   that contains the primary values.
+#' @param value Logical indicating whether to return the violated values of
+#'   \code{foreign_col} (TRUE) or the complete rows of \code{foreign_df}
+#'   containing the violated values (FALSE). Default is FALSE.
 #'
-#' @return A vector with the values that violate referential integrity. If no
-#'   violated values are found, an empty vector is returned.
+#' @return
+#' \code{verify_integrity (value = FALSE)} returns a dataframe with the
+#' rows containing the violated values in \code{foreign_col}.
+#'
+#' \code{verify_integrity (value = TRUE)} returns a vector with the
+#' violated values in \code{foreign_col}.
 #'
 #' @note This function aims to help improve the property
 #'   \code{\link[=characteristics_properties]{Referential Integrity}}.
 #'
 #' @examples
+#' # Example data frame
 #' employees <- data.frame(id = 1:5, name = c("Mario", "Ismael", "Fernando", "Gregorio", "John"))
 #' sales <- data.frame(id = 1:5, price = c(500, 1000, 250, 300, 500),
 #'                     date = c("08/01/2022", "16/03/2022", "03/04/2022", "04/04/2022", "10/05/2022"),
 #'                     seller = c(1, 2, 3, 3, 6))
 #'
-#' verify_integrity(employees, sales, "id", "seller")
+#' ### Using value = FALSE
+#' # We obtain a data frame with only the invalid records
+#' invalid_sales <- verify_integrity(sales, "seller", employees, "id")
+#' invalid_sales
+#'
+#' # We create a data frame with only the valid records
+#' valid_sales <- sales[!sales$seller %in% invalid_sales$seller,]
+#'
+#' ### Using value = TRUE
+#' # We obtain the violated_values
+#' violated_values <- verify_integrity(sales, "seller", employees, "id", value = TRUE)
+#' violated_values
+#'
+#' # We create a data frame with only the valid records
+#' valid_sales <- sales[!sales$seller %in% violated_values,]
+#' valid_sales
+#'
+#' # We create a data frame with only the invalid records
+#' invalid_sales <- sales[sales$seller %in% violated_values,]
+#' invalid_sales
 #' @export
-verify_integrity <- function(df1, df2, col1, col2) {
-  valores_foraneos <- unique(df2[[col2]])
-  valores_primarios <- unique(df1[[col1]])
-  valores_violados <- valores_foraneos[!valores_foraneos %in% valores_primarios]
+verify_integrity <- function(foreign_df, foreign_col, primary_df, primary_col, value = FALSE) {
+  foreign_values <- unique(foreign_df[[foreign_col]])
+  primary_values <- unique(primary_df[[primary_col]])
+  violated_values <- foreign_values[!foreign_values %in% primary_values]
 
-  return(valores_violados)
+  if (!value) {
+    violated_values <- foreign_df[foreign_df[[foreign_col]] %in% violated_values, ]
+  }
+
+  return(violated_values)
 }
 
 #' Creates a new column in a data frame using a formula
