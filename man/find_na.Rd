@@ -17,12 +17,12 @@ This function was made for the purpose of locating the possible NA values of
 the vector returned by \code{\link{standardize_dates}()}. These would be
 values that could not be parsed. Thanks to this you can access the original
 values of the date vector and fix them manually. Once fixed,
-\code{\link{replace_values}()} can be used to replace these values in the
+\code{\link{replace}()} can be used to replace these values in the
 resulting vector.
 }
 \examples{
 find_na(c(1, NA, 2, NA))
 }
 \seealso{
-\code{\link{standardize_dates}, \link{replace_values}}
+\code{\link{standardize_dates}, \link{replace}}
 }

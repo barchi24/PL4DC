@@ -64,5 +64,5 @@ dates <- data.frame(id = 1:2,
 dates <- standardize_dates_table(dates, c(2, 3))
 }
 \seealso{
-\code{\link{find_na}, \link{replace_values}}
+\code{\link{find_na}, \link{replace}}
 }

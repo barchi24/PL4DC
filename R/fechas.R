@@ -42,7 +42,7 @@ change_date_format <- function(dates, new_format = "%Y-%m-%d") {
 #' @note This function aims to help improve the property
 #'   \code{\link[=characteristics_properties]{Format Consistency}}.
 #'
-#' @seealso \code{\link{replace_values}}
+#' @seealso \code{\link{replace}}
 #'
 #' @examples
 #' # Basic example
@@ -99,7 +99,7 @@ add_delimiter <- function(dates) {
 #' @note These functions aim to help improve the property
 #'   \code{\link[=characteristics_properties]{Format Consistency}}.
 #'
-#' @seealso \code{\link{find_na}, \link{replace_values}}
+#' @seealso \code{\link{find_na}, \link{replace}}
 #'
 #' @examples
 #' # Using a vector

@@ -45,5 +45,5 @@ dates[c(3,5)] <- add_delimiter(dates[c(3,5)])
 standardize_dates(dates)
 }
 \seealso{
-\code{\link{replace_values}}
+\code{\link{replace}}
 }
