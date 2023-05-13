@@ -44,9 +44,10 @@ complete rows containing invalid values, depending on the \code{value}
 parameter.
 }
 \details{
-The \code{formula} parameter must be wrapped in the \code{quote()}
-  function so that it is passed as an evaluable expression. For example:
-  \code{isDerivedColumnValid(df, "col3", quote(col1 + col2))}
+The \code{formula} parameter must be wrapped in the
+  \code{\link{quote}()} function so that it is passed as an evaluable
+  expression. For example: \code{isDerivedColumnValid(df, "col3", quote(col1
+  + col2))}
 }
 \note{
 These functions aim to help improve the property
@@ -71,6 +72,9 @@ invalid_rows <- validate_derived_column(data, "z", quote(x + y))
 invalid_rows
 }
 \seealso{
-Use \code{\link{derived_column}} to create columns derived from the
-  data in other columns.
+Use \code{\link{derived_column}} to create columns derived from the data in
+other columns.
+
+For more information about the formulas that can be used, please refer to the
+\code{\link{eval}} and \code{\link{quote}} documentation.
 }
