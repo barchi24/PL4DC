@@ -35,11 +35,12 @@ invalid values of \code{col_name}.
 }
 \description{
 Both functions validate whether a column (created based on data from other
-columns) is valid by evaluating a formula that references other columns in
-this or another data frame. \code{isDerivedColumnValid} returns a logical
-value indicating whether all values comply with the formula entered or not,
-and \code{validate_derived_column} returns the invalid values of the column
-or complete rows containing invalid values, depending on the \code{value}
+columns) is valid by evaluating a formula that references the operations
+between different columns that should have been used for its creation.
+\code{isDerivedColumnValid} returns a logical value indicating whether all
+values comply with the formula entered or not, and
+\code{validate_derived_column} returns the invalid values of the column or
+complete rows containing invalid values, depending on the \code{value}
 parameter.
 }
 \details{
