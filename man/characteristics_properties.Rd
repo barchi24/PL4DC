@@ -41,6 +41,10 @@ The data quality characteristics and properties covered are shown below, along w
         \item \code{\link{isDerivedColumnValid}()}
         \item \code{\link{validate_derived_column}()}
       }
+    \item Risk of Inconsistency
+      \itemize{
+        \item \code{\link{detect_duplicates}()}
+      }
     \item Format Consistency
       \itemize{
         \item \code{\link{standardize_dates}()}

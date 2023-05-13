@@ -22,8 +22,7 @@ The same data frame with the new column added.
 }
 \description{
 This function creates a new column in a data frame by evaluating a formula
-that references other columns in this (df) or other data frame. The new
-column is added to the data frame in-place.
+that references other columns in this (df) or other data frame.
 }
 \note{
 This function aims to help improve the property

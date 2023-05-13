@@ -67,8 +67,7 @@ verify_integrity <- function(foreign_df, foreign_col, primary_df, primary_col, v
 #' Creates a new column in a data frame using a formula
 #'
 #' This function creates a new column in a data frame by evaluating a formula
-#' that references other columns in this (df) or other data frame. The new
-#' column is added to the data frame in-place.
+#' that references other columns in this (df) or other data frame.
 #'
 #' @param df The data frame where the new column will be added.
 #' @param new_col A character string with the name of the new column to be

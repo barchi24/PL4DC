@@ -1,7 +1,7 @@
 Package: PL4DC
 Type: Package
 Title: Parameterizable Library for Data Cleaning
-Version: 0.5.1
+Version: 0.6.0
 Author: Gregorio Barchino Rodríguez-Caro
 Maintainer: Gregorio Barchino <gregorio.barchino@alu.uclm.es>
 Description: This package is made to assist in data cleansing tasks. The functions contained are focused on improving one or more of the quality properties defined in ISO/IEC 25024.
