@@ -42,3 +42,6 @@ valid_rows
 invalid_rows <- users[na_rows,]
 invalid_rows
 }
+\seealso{
+To impute the NA values, check the function \code{\link{na_imputation}}.
+}

@@ -46,9 +46,12 @@ This function aims to help improve the property
 \examples{
 # Example data frame
 employees <- data.frame(id = 1:5, name = c("Mario", "Ismael", "Fernando", "Gregorio", "John"))
+employees
+
 sales <- data.frame(id = 1:5, price = c(500, 1000, 250, 300, 500),
                     date = c("08/01/2022", "16/03/2022", "03/04/2022", "04/04/2022", "10/05/2022"),
                     seller = c(1, 2, 3, 3, 6))
+sales
 
 ### Using value = FALSE
 # We obtain a data frame with only the invalid records

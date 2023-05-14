@@ -66,6 +66,7 @@ cars <- data.frame(id = 1:10,
                                      "0969 VAO", "4928 NFD", "2749 OMM",
                                      "5395 MDL", "8259 RNT", "6610 XBQ",
                                      "5822 TOI"))
+cars
 
 ### Bearing in mind that a record is a duplicate if they coincide in brand,
 ### model and price

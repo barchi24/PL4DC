@@ -28,6 +28,7 @@ The data quality characteristics and properties covered are shown below, along w
     \item Record Completeness
       \itemize{
         \item \code{\link{na_detection}()}
+        \item \code{\link{na_imputation}()}
       }
   }
 }

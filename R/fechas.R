@@ -99,7 +99,7 @@ add_delimiter <- function(dates) {
 #' @note These functions aim to help improve the property
 #'   \code{\link[=characteristics_properties]{Format Consistency}}.
 #'
-#' @seealso \code{\link{find_na}, \link{replace}}
+#' @seealso \code{\link{na_positions}, \link{replace}}
 #'
 #' @examples
 #' # Using a vector
@@ -116,6 +116,7 @@ add_delimiter <- function(dates) {
 #'                     date2 = c("12/31/2019", "27-03-20"))
 #'
 #' dates <- standardize_dates_table(dates, c(2, 3))
+#' @import lubridate
 #' @export
 standardize_dates <- function(dates, input_format = c("dmy", "mdy", "ymd"),
                                output_format = "%Y-%m-%d") {
