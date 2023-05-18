@@ -12,10 +12,6 @@
 #'   (TRUE) or the complete rows (FALSE). Default is FALSE.
 #' @param distinct Logical indicating whether to return the unique rows (TRUE)
 #'   instead of the duplicated rows (FALSE). Default is FALSE.
-#' @param incomparables A vector of values that cannot be compared. FALSE is a
-#'   special value, meaning that all values can be compared, and may be the only
-#'   value accepted for methods other than the default. It will be coerced
-#'   internally to the same type as df.
 #' @param fromLast Logical indicating if duplication should be considered from
 #'   the reverse side, i.e., the last (or rightmost) of identical elements would
 #'   correspond to duplicated = FALSE.
@@ -78,9 +74,8 @@
 #' distinct_rows
 #' @export
 detect_duplicates <- function(df, columns, value = FALSE, distinct = FALSE,
-                              incomparables = FALSE, fromLast = FALSE, nmax = NA) {
-  isDuplicated <- duplicated(df[, columns], incomparables = incomparables,
-                             fromLast = fromLast, nmax = nmax)
+                              fromLast = FALSE, nmax = NA) {
+  isDuplicated <- duplicated(df[, columns], fromLast = fromLast, nmax = nmax)
 
   if (distinct) {
     data <- df[!isDuplicated,]

@@ -9,7 +9,6 @@ detect_duplicates(
   columns,
   value = FALSE,
   distinct = FALSE,
-  incomparables = FALSE,
   fromLast = FALSE,
   nmax = NA
 )
@@ -25,11 +24,6 @@ where you want to detect duplicates.}
 
 \item{distinct}{Logical indicating whether to return the unique rows (TRUE)
 instead of the duplicated rows (FALSE). Default is FALSE.}
-
-\item{incomparables}{A vector of values that cannot be compared. FALSE is a
-special value, meaning that all values can be compared, and may be the only
-value accepted for methods other than the default. It will be coerced
-internally to the same type as df.}
 
 \item{fromLast}{Logical indicating if duplication should be considered from
 the reverse side, i.e., the last (or rightmost) of identical elements would
