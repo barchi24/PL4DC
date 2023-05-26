@@ -9,7 +9,7 @@
 #' @return A vector of dates in the desired format.
 #'
 #' @note This function aims to help improve the property
-#'   \code{\link[=characteristics_properties]{Format Consistency}}.
+#'   \code{\link[=properties]{Format Consistency}}.
 #'
 #' @examples
 #' # Change the format of the date vector
@@ -40,7 +40,7 @@ change_date_format <- function(dates, new_format = "%Y-%m-%d") {
 #'   number of months in the year, etc.).
 #'
 #' @note This function aims to help improve the property
-#'   \code{\link[=characteristics_properties]{Format Consistency}}.
+#'   \code{\link[=properties]{Format Consistency}}.
 #'
 #' @seealso \code{\link{replace}}
 #'
@@ -97,7 +97,7 @@ add_delimiter <- function(dates) {
 #'   dataframe with the specified columns standardized.
 #'
 #' @note These functions aim to help improve the property
-#'   \code{\link[=characteristics_properties]{Format Consistency}}.
+#'   \code{\link[=properties]{Format Consistency}}.
 #'
 #' @seealso \code{\link{na_positions}, \link{replace}}
 #'

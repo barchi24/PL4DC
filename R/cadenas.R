@@ -23,7 +23,7 @@
 #' of \code{vector}).
 #'
 #' @note These functions aim to help improve the property
-#'   \code{\link[=characteristics_properties]{Syntactic Accuracy}}.
+#'   \code{\link[=properties]{Syntactic Accuracy}}.
 #'
 #' @seealso
 #' \code{\link{regular expression}} (aka \code{\link{regexp}}) for details of

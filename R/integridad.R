@@ -22,7 +22,7 @@
 #' violated values in \code{foreign_col}.
 #'
 #' @note This function aims to help improve the property
-#'   \code{\link[=characteristics_properties]{Referential Integrity}}.
+#'   \code{\link[=properties]{Referential Integrity}}.
 #'
 #' @examples
 #' # Example data frame
@@ -83,7 +83,7 @@ verify_integrity <- function(foreign_df, foreign_col, primary_df, primary_col, v
 #' @return The same data frame with the new column added.
 #'
 #' @note This function aims to help improve the property
-#'   \code{\link[=characteristics_properties]{Referential Integrity}}.
+#'   \code{\link[=properties]{Referential Integrity}}.
 #'
 #' @examples
 #' data <- data.frame(x = 1:5, y = 6:10)
@@ -132,7 +132,7 @@ derived_column <- function(df, new_col, formula) {
 #'   + col2))}
 #'
 #' @note These functions aim to help improve the property
-#'   \code{\link[=characteristics_properties]{Referential Integrity}}.
+#'   \code{\link[=properties]{Referential Integrity}}.
 #'
 #' @seealso
 #' Use \code{\link{derived_column}} to create columns derived from the data in

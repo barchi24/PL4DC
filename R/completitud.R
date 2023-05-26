@@ -11,7 +11,7 @@
 #'   specified columns.
 #'
 #' @note This function aims to help improve the property
-#'   \code{\link[=characteristics_properties]{Record Completeness}}.
+#'   \code{\link[=properties]{Record Completeness}}.
 #'
 #' @seealso To impute the NA values, check the function \code{\link{na_imputation}}.
 #'
@@ -69,7 +69,7 @@ na_detection <- function(data, columns) {
 #'   \code{no_attrs = TRUE}, then return numerical vector or factor instead.
 #'
 #' @note This function aims to help improve the property
-#'   \code{\link[=characteristics_properties]{Record Completeness}}.
+#'   \code{\link[=properties]{Record Completeness}}.
 #'
 #' @seealso
 #' For more information about the function, check the \code{\link{imputate_na}}

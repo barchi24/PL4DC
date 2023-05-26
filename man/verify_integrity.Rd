@@ -41,7 +41,7 @@ This function verifies whether the values in one column of a data frame
 }
 \note{
 This function aims to help improve the property
-  \code{\link[=characteristics_properties]{Referential Integrity}}.
+  \code{\link[=properties]{Referential Integrity}}.
 }
 \examples{
 # Example data frame

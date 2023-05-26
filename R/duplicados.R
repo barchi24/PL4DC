@@ -22,7 +22,7 @@
 #'   values (depending on the \code{value} argument).
 #'
 #' @note These functions aim to help improve the property
-#'   \code{\link[=characteristics_properties]{Risk of Inconsistency}}.
+#'   \code{\link[=properties]{Risk of Inconsistency}}.
 #'
 #' @seealso This function uses the \code{\link{duplicated}} function for its
 #'   implementation. For more information about the parameters

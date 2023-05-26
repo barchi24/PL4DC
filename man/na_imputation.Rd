@@ -46,7 +46,7 @@ imputation methods. It uses the \code{\link{imputate_na}()} function from the
 }
 \note{
 This function aims to help improve the property
-  \code{\link[=characteristics_properties]{Record Completeness}}.
+  \code{\link[=properties]{Record Completeness}}.
 }
 \examples{
 # Generate data for the example

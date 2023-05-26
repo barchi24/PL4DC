@@ -45,7 +45,7 @@ columns that contain dates.
 }
 \note{
 These functions aim to help improve the property
-  \code{\link[=characteristics_properties]{Format Consistency}}.
+  \code{\link[=properties]{Format Consistency}}.
 }
 \examples{
 # Using a vector

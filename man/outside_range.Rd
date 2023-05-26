@@ -26,7 +26,7 @@ outside of the specified range.
 }
 \note{
 This function aims to help improve the property
-  \code{\link[=characteristics_properties]{Accuracy Range}}.
+  \code{\link[=properties]{Accuracy Range}}.
 }
 \examples{
 # Example data frame

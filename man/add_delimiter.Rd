@@ -28,7 +28,7 @@ When a date containing the year at the end is entered, it will be
 }
 \note{
 This function aims to help improve the property
-  \code{\link[=characteristics_properties]{Format Consistency}}.
+  \code{\link[=properties]{Format Consistency}}.
 }
 \examples{
 # Basic example

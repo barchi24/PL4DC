@@ -51,7 +51,7 @@ The \code{formula} parameter must be wrapped in the
 }
 \note{
 These functions aim to help improve the property
-  \code{\link[=characteristics_properties]{Referential Integrity}}.
+  \code{\link[=properties]{Referential Integrity}}.
 }
 \examples{
 # Example data frame

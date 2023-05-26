@@ -38,7 +38,7 @@ element of the vector.
 }
 \note{
 These functions aim to help improve the property
-  \code{\link[=characteristics_properties]{Syntactic Accuracy}}.
+  \code{\link[=properties]{Syntactic Accuracy}}.
 }
 \examples{
 # Example data frame

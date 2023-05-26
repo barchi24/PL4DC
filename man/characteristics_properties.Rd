@@ -1,21 +1,22 @@
 \name{characteristics_properties}
 \alias{characteristics}
 \alias{properties}
+\alias{cleaning_methods}
 
 \title{Characteristics and properties covered}
 
 \description{
-The data quality characteristics and properties covered are shown below, along with the functions that help to improve them.
+The data quality characteristics and properties covered are shown below, along with the primitives and functions that help to improve them.
 }
 
-\section{Accuracy}{
+\section{Accuracy (Exactitud)}{
   \itemize{
-    \item Syntactic Accuracy
+    \item Syntactic Accuracy (Exactitud Sintactica)
       \itemize{
         \item \code{\link{check_regex}()}
         \item \code{\link{check_regexl}()}
       }
-    \item Accuracy Range
+    \item Accuracy Range (Rango de Exactitud)
       \itemize{
         \item \code{\link{outside_range}()}
         \item \code{\link{check_categories}()}
@@ -23,9 +24,9 @@ The data quality characteristics and properties covered are shown below, along w
   }
 }
 
-\section{Completeness}{
+\section{Completeness (Completitud)}{
   \itemize{
-    \item Record Completeness
+    \item Record Completeness (Completitud de Registro)
       \itemize{
         \item \code{\link{na_detection}()}
         \item \code{\link{na_imputation}()}
@@ -33,20 +34,20 @@ The data quality characteristics and properties covered are shown below, along w
   }
 }
 
-\section{Consistency}{
+\section{Consistency (Consistencia)}{
   \itemize{
-    \item Referential Integrity
+    \item Referential Integrity (Integridad Referencial)
       \itemize{
         \item \code{\link{verify_integrity}()}
         \item \code{\link{derived_column}()}
         \item \code{\link{isDerivedColumnValid}()}
         \item \code{\link{validate_derived_column}()}
       }
-    \item Risk of Inconsistency
+    \item Risk of Inconsistency (Riesgo de Inconsistencia)
       \itemize{
         \item \code{\link{detect_duplicates}()}
       }
-    \item Format Consistency
+    \item Format Consistency (Consistencia de Formato)
       \itemize{
         \item \code{\link{standardize_dates}()}
         \item \code{\link{standardize_dates_table}()}

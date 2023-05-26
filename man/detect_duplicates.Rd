@@ -44,7 +44,7 @@ instead of the complete rows depending on the \code{value} argument.
 }
 \note{
 These functions aim to help improve the property
-  \code{\link[=characteristics_properties]{Risk of Inconsistency}}.
+  \code{\link[=properties]{Risk of Inconsistency}}.
 }
 \examples{
 # Example data frame

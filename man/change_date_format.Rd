@@ -20,7 +20,7 @@ Changes the format of dates in a vector.
 }
 \note{
 This function aims to help improve the property
-  \code{\link[=characteristics_properties]{Format Consistency}}.
+  \code{\link[=properties]{Format Consistency}}.
 }
 \examples{
 # Change the format of the date vector

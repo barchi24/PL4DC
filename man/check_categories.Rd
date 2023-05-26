@@ -24,7 +24,7 @@ vector with the indices or values that are not in the specified categories.
 }
 \note{
 This function aims to help improve the property
-  \code{\link[=characteristics_properties]{Accuracy Range}}.
+  \code{\link[=properties]{Accuracy Range}}.
 }
 \examples{
 # Example data frame

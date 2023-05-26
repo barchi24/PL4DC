@@ -26,7 +26,7 @@ that references other columns in this (df) or other data frame.
 }
 \note{
 This function aims to help improve the property
-  \code{\link[=characteristics_properties]{Referential Integrity}}.
+  \code{\link[=properties]{Referential Integrity}}.
 }
 \examples{
 data <- data.frame(x = 1:5, y = 6:10)

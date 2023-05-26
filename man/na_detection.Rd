@@ -22,7 +22,7 @@ rows that have at least one missing value in any of the specified columns.
 }
 \note{
 This function aims to help improve the property
-  \code{\link[=characteristics_properties]{Record Completeness}}.
+  \code{\link[=properties]{Record Completeness}}.
 }
 \examples{
 # Example data frame

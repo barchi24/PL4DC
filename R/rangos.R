@@ -13,7 +13,7 @@
 #'   the specified range.
 #'
 #' @note This function aims to help improve the property
-#'   \code{\link[=characteristics_properties]{Accuracy Range}}.
+#'   \code{\link[=properties]{Accuracy Range}}.
 #'
 #' @seealso \code{\link{check_categories}}
 #'
@@ -77,7 +77,7 @@ outside_range <- function(vector, min, max, value = FALSE) {
 #'   categories
 #'
 #' @note This function aims to help improve the property
-#'   \code{\link[=characteristics_properties]{Accuracy Range}}.
+#'   \code{\link[=properties]{Accuracy Range}}.
 #'
 #' @seealso \code{\link{outside_range}}
 #'
