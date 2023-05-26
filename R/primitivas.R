@@ -55,6 +55,8 @@ Limpieza_Rango_Exactitud <- function(ds, funcionLimpieza, ...) {
   )
 }
 
+#' @rdname Limpieza_Consistencia_Formato
+#' @export
 Limpieza_Completitud_Registro <- function(ds, funcionLimpieza, ...) {
   switch (funcionLimpieza,
           na_detection = na_detection(data = ds, ...),

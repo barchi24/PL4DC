@@ -5,6 +5,7 @@
 \alias{primitives}
 \alias{Limpieza_Exactitud_Sintactica}
 \alias{Limpieza_Rango_Exactitud}
+\alias{Limpieza_Completitud_Registro}
 \alias{Limpieza_Integridad_Referencial}
 \alias{Limpieza_Riesgo_Inconsistencia}
 \title{Primitives to improve data quality}
@@ -14,6 +15,8 @@ Limpieza_Consistencia_Formato(ds, funcionLimpieza, ...)
 Limpieza_Exactitud_Sintactica(ds, funcionLimpieza, ...)
 
 Limpieza_Rango_Exactitud(ds, funcionLimpieza, ...)
+
+Limpieza_Completitud_Registro(ds, funcionLimpieza, ...)
 
 Limpieza_Integridad_Referencial(ds, funcionLimpieza, ...)
 
