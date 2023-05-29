@@ -6,17 +6,17 @@
 \title{Characteristics and properties covered}
 
 \description{
-The data quality characteristics and properties covered are shown below, along with the primitives and functions that help to improve them.
+The data quality characteristics and properties covered are shown below, along with the functions that help to improve them.
 }
 
-\section{Accuracy (Exactitud)}{
+\section{Accuracy}{
   \itemize{
-    \item Syntactic Accuracy (Exactitud Sintactica)
+    \item Syntactic Accuracy
       \itemize{
         \item \code{\link{check_regex}()}
         \item \code{\link{check_regexl}()}
       }
-    \item Accuracy Range (Rango de Exactitud)
+    \item Accuracy Range
       \itemize{
         \item \code{\link{outside_range}()}
         \item \code{\link{check_categories}()}
@@ -24,9 +24,9 @@ The data quality characteristics and properties covered are shown below, along w
   }
 }
 
-\section{Completeness (Completitud)}{
+\section{Completeness}{
   \itemize{
-    \item Record Completeness (Completitud de Registro)
+    \item Record Completeness
       \itemize{
         \item \code{\link{na_detection}()}
         \item \code{\link{na_imputation}()}
@@ -34,20 +34,20 @@ The data quality characteristics and properties covered are shown below, along w
   }
 }
 
-\section{Consistency (Consistencia)}{
+\section{Consistency}{
   \itemize{
-    \item Referential Integrity (Integridad Referencial)
+    \item Referential Integrity
       \itemize{
         \item \code{\link{verify_integrity}()}
         \item \code{\link{derived_column}()}
         \item \code{\link{isDerivedColumnValid}()}
         \item \code{\link{validate_derived_column}()}
       }
-    \item Risk of Inconsistency (Riesgo de Inconsistencia)
+    \item Risk of Inconsistency
       \itemize{
         \item \code{\link{detect_duplicates}()}
       }
-    \item Format Consistency (Consistencia de Formato)
+    \item Format Consistency
       \itemize{
         \item \code{\link{standardize_dates}()}
         \item \code{\link{standardize_dates_table}()}
