@@ -6,9 +6,15 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of PL4DC is to to assist in data cleansing tasks. The functions
-contained are focused on improving one or more of the quality properties
-defined in ISO/IEC 25024.
+The goal of PL4DC is to to assist in data cleaning tasks. The functions
+contained are focused on improving one or more of the data quality
+properties defined in ISO/IEC 25024. The library is composed of two main
+types of functions: primitives and cleaning methods. Both are focused on
+helping to improve (mainly) a data quality property (in the case of
+primitives it is indicated in their name); each primitive contains one
+or more cleaning methods, and it’s named after the property related to
+it. (using the command *?cleaning_methods* you can access the list of
+cleaning methods available for each primitive).
 
 ## Installation
 
@@ -22,19 +28,25 @@ devtools::install_github("barchi24/PL4DC")
 
 ## Usage
 
-It is quite common to have to handle dates in any data set. The problem
-is that these dates can be in more than one format, which makes them
-difficult to handle and use, so it is convenient to transform them to
-the same format. The standardize_dates function helps with just that.
+There are two ways to work with PL4DC: using the primitives, or using
+the cleaning methods directly. At the beginning it is advisable to work
+with primitives, as they provide an additional layer of abstraction that
+makes it easier to understand and use the cleaning methods. Once you’ve
+had some practice, it will probably be quicker to work directly with the
+cleaning methods, but that’s up to each individual.
+
+To access the list of available primitives, use the following command
+(which will take you to the documentation of these primitives):
 
 ``` r
-library(PL4DC)
+?primitives
+```
 
-# Example of different dates with different formats
-dates <- c("27/03/2023", "15-07-2021", "16092012", "5/13/2017",
-           "18-03-23", "1998-03-18", "Jun 14, 1997", "22 Jan 2015")
+And to access the list of cleaning methods, use one of the following
+commands:
 
-standardize_dates(dates, output_format = "%d/%m/%Y")
-#> [1] "27/03/2023" "15/07/2021" "16/09/2012" "13/05/2017" "18/03/2023"
-#> [6] "18/03/1998" "14/06/1997" "22/01/2015"
+``` r
+?cleaning_methods
+?properties
+?characteristics
 ```
