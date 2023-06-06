@@ -1,21 +1,19 @@
 Package: PL4DC
 Type: Package
 Title: Parameterizable Library for Data Cleaning
-Version: 0.8.2
+Version: 1.0.0
 Author: Gregorio Barchino Rodríguez-Caro
 Maintainer: Gregorio Barchino <gregorio.barchino@alu.uclm.es>
 Description: This package is made to assist in data cleansing tasks. The functions contained are focused on improving one or more of the quality properties defined in ISO/IEC 25024.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: xz
 URL: https://github.com/barchi24/PL4DC
 BugReports: https://github.com/barchi24/PL4DC/issues
 RoxygenNote: 7.2.3
 Imports: 
     lubridate,
     dlookr
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5.0)
