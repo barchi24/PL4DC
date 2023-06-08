@@ -11,10 +11,8 @@ contained are focused on improving one or more of the data quality
 properties defined in ISO/IEC 25024. The library is composed of two main
 types of functions: primitives and cleaning methods. Both are focused on
 helping to improve (mainly) a data quality property (in the case of
-primitives it is indicated in their name); each primitive contains one
-or more cleaning methods, and it’s named after the property related to
-it. (using the command *?cleaning_methods* you can access the list of
-cleaning methods available for each primitive).
+primitives it is indicated in their name); each primitive is named after
+the property related to it, and contains one or more cleaning methods.
 
 ## Installation
 
