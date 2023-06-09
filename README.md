@@ -4,6 +4,11 @@
 # PL4DC
 
 <!-- badges: start -->
+
+<img src="images/UCLM-Logo-02.png" width="397" />
+
+<img src="images/dqteam.png" width="234" />
+
 <!-- badges: end -->
 
 The goal of PL4DC is to to assist in data cleaning tasks. The functions
