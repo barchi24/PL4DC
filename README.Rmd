@@ -17,9 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
-![](images/UCLM-Logo-02.png){width="397"}
-
-![](images/dqteam.png){width="234"}
+![](images/both.png)
 
 <!-- badges: end -->
 

@@ -5,9 +5,7 @@
 
 <!-- badges: start -->
 
-<img src="images/UCLM-Logo-02.png" width="397" />
-
-<img src="images/dqteam.png" width="234" />
+![](images/both.png)
 
 <!-- badges: end -->
 
